@@ -1,5 +1,6 @@
 const generate = () => {
   const gamesCount = parseInt($('#games-count').find("option:selected").attr('value'), 10);
+  const numbersCount = parseInt($('#numbers-count').find("option:selected").attr('value'), 10);
   const selectNumbers = $('#select-numbers').find("option:selected").attr('value');
   
   let selectedNumbers = [];
@@ -9,7 +10,7 @@ const generate = () => {
     });
   }
 
-  if (selectedNumbers.length < 6) {
+  if (selectedNumbers.length < numbersCount) {
     selectedNumbers = Array.from({ length: 60 }, (_, i) => (i + 1).toString().padStart(2, '0'));
   }
   
@@ -18,7 +19,7 @@ const generate = () => {
     let game = [];
     let i = 0;
 
-    while (i < 6) {
+    while (i < numbersCount) {
       const randomIndex = Math.floor(Math.random() * selectedNumbers.length);
       const randomNum = selectedNumbers[randomIndex];
 
@@ -35,14 +36,18 @@ const generate = () => {
   const gamesContainer = $('#generated-games');
   gamesContainer.empty();
 
-  games.forEach((game) => {
+  games.forEach((game, gamesIndex) => {
     gamesContainer.append(`<p>${game}</p>`);
+    if (gamesIndex < games.length - 1) {
+      gamesContainer.append('<hr>');
+    }
   });
 };
 
 const clearGames = () => {
   $('#numbers td').removeClass('selected');
   $('#games-count').val('1').trigger('change');
+  $('#numbers-count').val('6').trigger('change');
   $('#select-numbers').val('yes').trigger('change');
   $('#generated-games').empty();
 }
@@ -74,7 +79,7 @@ $(document).on('change','#select-numbers',function(){
 });
 
 $(document).ready(function() {
-  $('#games-count, #select-numbers').select2({
+  $('#games-count, #numbers-count, #select-numbers').select2({
     minimumResultsForSearch: -1,
     width: '75px'
   });

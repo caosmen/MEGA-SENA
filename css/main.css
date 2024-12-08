@@ -34,8 +34,11 @@ html, body {
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  justify-self: center;
 
   min-height: 100%;
+  max-width: 500px;
+  margin: 2rem;
 }
 
 /* Title and Subtitle */
@@ -72,14 +75,14 @@ label {
 }
 
 /* Select Group */
-#select-group {
+.select-group {
   display: flex;
   flex-direction: row;
 
   gap: 1rem;
 }
 
-#select {
+.select {
   text-align: center;
 }
 
@@ -195,15 +198,26 @@ table tr td:last-child {
 
 /* Generated Games */
 #generated-games {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   margin-top: 20px;
+  width: 100%;
 }
 
 #generated-games p {
   color: var(--main);
 
   font-size: 1.5rem;
+  text-align: justify;
 
   margin: 5px 0;
+}
+
+#generated-games hr {
+  width: 100%;
+  border: 1px solid var(--main);
 }
 
 /* Media Queries */
@@ -216,7 +230,7 @@ table tr td:last-child {
     font-size: 1rem;
   }
 
-  #select-group {
+  .select-group {
     flex-direction: column;
   }
 

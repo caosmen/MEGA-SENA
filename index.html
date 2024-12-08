@@ -1,58 +1,82 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Mega-Sena</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Page icon -->
-    <link rel="shortcut icon" type="image/png" href="images/icon.png">
-    <!-- Main CSS -->
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200&display=swap" rel="stylesheet">
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- Select2 -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div class="main-box">
-      <h1 class="title-text noselect">Mega Sena</h1>
-      <h6 class="subtitle-text noselect">Number Generator for Mega Sena</h6>
-      <div class="noselect" id="select-group">
-        <div id="select">
-          <label for="games-count">Games Count:</label>
-          <select id="games-count">
-            <option value="1" selected>1</option>
-            <option value="2">2</option>
-            <option value="4">4</option>
-            <option value="8">8</option>
-            <option value="16">16</option>
-            <option value="32">32</option>
-            <option value="64">64</option>
-            <option value="128">128</option>
-          </select>
-        </div>
-        <div id="select">
-          <label for="select-numbers">Select Numbers:</label>
-          <select id="select-numbers">
-            <option value="yes" selected>yes</option>
-            <option value="no">no</option>
-          </select>
-        </div>
+<head>
+  <title>Mega-Sena</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Page icon -->
+  <link rel="shortcut icon" type="image/png" href="images/icon.png">
+  <!-- Main CSS -->
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200&display=swap" rel="stylesheet">
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!-- Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="main-box">
+    <h1 class="title-text noselect">Mega Sena</h1>
+    <h6 class="subtitle-text noselect">Number Generator for Mega Sena</h6>
+    <div class="noselect select-group">
+      <div class="select">
+        <label for="games-count">Games Count:</label>
+        <select id="games-count">
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="4">4</option>
+          <option value="8">8</option>
+          <option value="16">16</option>
+          <option value="32">32</option>
+          <option value="64">64</option>
+          <option value="128">128</option>
+        </select>
       </div>
-      <table class="noselect" id="numbers"></table>
-      <div class="buttons-list noselect">
-        <button type="button" class="transparent-button" onclick="generate()">GENERATE</button>
-        <button type="button" class="transparent-button" onclick="clearGames()">CLEAR GAMES</button>
+      <div class="select">
+        <label for="numbers-count">Numbers Count:</label>
+        <select id="numbers-count">
+          <option value="6" selected>6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+        </select>
       </div>
-      <div id="generated-games"></div>
+      <div class="select">
+        <label for="select-numbers">Select Numbers:</label>
+        <select id="select-numbers">
+          <option value="yes" selected>yes</option>
+          <option value="no">no</option>
+        </select>
+      </div>
     </div>
-    <!-- Optional JavaScript -->
-    <script src="js/main.js"></script>
-    <!-- Select2 -->
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-  </body>
+    <table class="noselect" id="numbers"></table>
+    <div class="buttons-list noselect">
+      <button type="button" class="transparent-button" onclick="generate()">GENERATE</button>
+      <button type="button" class="transparent-button" onclick="clearGames()">CLEAR GAMES</button>
+    </div>
+    <div id="generated-games"></div>
+  </div>
+  <!-- Optional JavaScript -->
+  <script src="js/main.js"></script>
+  <!-- Select2 -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</body>
+
 </html>
